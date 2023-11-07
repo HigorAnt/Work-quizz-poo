@@ -19,7 +19,6 @@ class Jogador{
     }
 
     public String toString() {
-        return getNome() + ", a sua pontuação é de\\n" + //
-                " " + getPontuacao();
+        return getNome() + ", a sua pontuação é de\\n" + getPontuacao();
     } 
 }
