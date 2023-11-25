@@ -1,24 +1,45 @@
-class Jogador{
+class Jogador {
     private String nome;
-    private int pontuacao;
-
+    private int pontos;
+    
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setPontuacao(int pontuacao) {
-        this.pontuacao = pontuacao;
-    }
-
     public String getNome() {
         return nome;
-    } 
-
-    public int getPontuacao() {
-        return pontuacao;
     }
 
+    public void setAcertos(int pontos) {
+        this.pontos += pontos;
+    }
+
+    public void setErros(int pontos) {
+        this.pontos -= pontos;
+    }
+
+    public int pontuacaoAtual() {
+        return pontos;
+    }
+
+    public void atribuicao(boolean resultado) {
+        if(resultado==true) {
+            setAcertos(10);
+        } else {
+            setErros(5);
+        }
+    }
+
+    public boolean validacao() {
+        boolean validacao=true;
+        if(pontuacaoAtual()==0) {
+            validacao = false;
+        }
+        return validacao;
+    }
+
+    @Override
     public String toString() {
-        return getNome() + ", a sua pontuação é de" + getPontuacao();
-    } 
+        return getNome() + ", a Sua pontuação foi de " + pontuacaoAtual() + " pontos, parabéns!";
+    }
 }
